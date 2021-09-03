@@ -34,8 +34,9 @@ public class Traverse_Test {
 
         //Test Pre, In, Post, order Traversal
         Traversals<Integer> mist = new Traversals<>();
-        System.out.println(mist.preorder(rooty));
-
+        System.out.println("Pre-Order " + mist.preorder(rooty));
+        System.out.println("In-Order " +mist.inorder(rooty));
+        System.out.println("Post-Order " +mist.postorder(rooty));
 
     }
 }
