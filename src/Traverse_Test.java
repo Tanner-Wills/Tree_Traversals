@@ -27,7 +27,7 @@ public class Traverse_Test {
         right1.setRight(right2);
 
         //Test Pre, In, Post, order Traversal
-        preorder(rooty);
+        postorder(rooty);
 
     }
 }

@@ -1,6 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 /**
  * pre-order, in-order, and post-order
@@ -21,15 +19,14 @@ public class Traversals<T extends Comparable<? super T>> {
      */
     public List<T> preorder(TreeNode<T> root) {
         // C,L,R
-        System.out.println(root.getData());
-
-        if(root.getLeft() != null){
-            preorder(root.getLeft());
+        if(root == null){
+            return (List<T>) root.getData();
         }
-        else if (root.getRight() != null){
-            preorder(root.getRight());
-        }
+        System.out.print(root.getData() + " ");
 
+        preorder(root.getLeft());
+
+        preorder(root.getRight());
     }
 
     /**
@@ -47,16 +44,14 @@ public class Traversals<T extends Comparable<? super T>> {
     public List<T> inorder(TreeNode<T> root) {
         // L,C,R
 
-        if(root.getLeft() != null){
-            inorder(root.getLeft());
+        if(root == null){
+            return (List<T>) root.getData();
         }
-        System.out.println(root.getData());
+        inorder(root.getLeft());
 
-        if(root.getRight() != null){
-            inorder(root.getRight());
-        }
+        System.out.print(root.getData() + " ");
 
-
+        inorder(root.getRight());
     }
 
     /**
@@ -67,19 +62,20 @@ public class Traversals<T extends Comparable<? super T>> {
      * This must be done recursively.
      *
      * Must be O(n).
-     *
-     * @param <T> Generic type.
+     *  @param <T> Generic type.
      * @param root The root of a BST.
      */
-    public List<T> postorder(TreeNode<T> root) {
+    public void postorder(TreeNode<T> root) {
         // L,R,C
-        if(root.getLeft() != null){
-            postorder(root.getLeft());
-        }
 
-        if(root.getRight() != null){
-            postorder(root.getRight());
+        if(root == null){
+            return;
         }
-        System.out.println(root.getData());
+        postorder(root.getLeft());
+
+        postorder(root.getRight());
+
+        System.out.print(root.getData() + " ");
     }
+
 }
