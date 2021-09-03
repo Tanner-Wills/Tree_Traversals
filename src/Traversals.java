@@ -3,14 +3,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * Your implementation of the pre-order, in-order, and post-order
- * traversals of a tree.
+ * pre-order, in-order, and post-order
  */
 public class Traversals<T extends Comparable<? super T>> {
-
-    /**
-     * DO NOT ADD ANY GLOBAL VARIABLES!
-     */
 
     /**
      * Given the root of a binary search tree, generate a
@@ -26,7 +21,10 @@ public class Traversals<T extends Comparable<? super T>> {
      * @return List containing the pre-order traversal of the tree.
      */
     public List<T> preorder(TreeNode<T> root) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        // C,L,R
+        
+
+
     }
 
     /**
