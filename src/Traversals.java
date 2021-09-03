@@ -18,12 +18,17 @@ public class Traversals<T extends Comparable<? super T>> {
      *
      * @param <T> Generic type.
      * @param root The root of a BST.
-     * @return List containing the pre-order traversal of the tree.
      */
     public List<T> preorder(TreeNode<T> root) {
         // C,L,R
-        
+        System.out.println(root.getData());
 
+        if(root.getLeft() != null){
+            preorder(root.getLeft());
+        }
+        else if (root.getRight() != null){
+            preorder(root.getRight());
+        }
 
     }
 
@@ -38,10 +43,20 @@ public class Traversals<T extends Comparable<? super T>> {
      *
      * @param <T> Generic type.
      * @param root The root of a BST.
-     * @return List containing the in-order traversal of the tree.
      */
     public List<T> inorder(TreeNode<T> root) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        // L,C,R
+
+        if(root.getLeft() != null){
+            inorder(root.getLeft());
+        }
+        System.out.println(root.getData());
+
+        if(root.getRight() != null){
+            inorder(root.getRight());
+        }
+
+
     }
 
     /**
@@ -55,9 +70,16 @@ public class Traversals<T extends Comparable<? super T>> {
      *
      * @param <T> Generic type.
      * @param root The root of a BST.
-     * @return List containing the post-order traversal of the tree.
      */
     public List<T> postorder(TreeNode<T> root) {
-        // WRITE YOUR CODE HERE (DO NOT MODIFY METHOD HEADER)!
+        // L,R,C
+        if(root.getLeft() != null){
+            postorder(root.getLeft());
+        }
+
+        if(root.getRight() != null){
+            postorder(root.getRight());
+        }
+        System.out.println(root.getData());
     }
 }
