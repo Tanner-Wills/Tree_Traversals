@@ -1,81 +1,85 @@
 import java.util.List;
-
+import java.util.ArrayList;
+import java.util.LinkedList;
 /**
  * pre-order, in-order, and post-order
  */
 public class Traversals<T extends Comparable<? super T>> {
 
     /**
-     * Given the root of a binary search tree, generate a
-     * pre-order traversal of the tree. The original tree
-     * should not be modified in any way.
-     *
-     * This must be done recursively.
-     *
-     * Must be O(n).
-     *
-     * @param <T> Generic type.
-     * @param root The root of a BST.
+     * Pre Order Traversal
      */
     public List<T> preorder(TreeNode<T> root) {
         // C,L,R
-        if(root == null){
-            return (List<T>) root.getData();
+
+        // Declare a new list
+        List<T> returnVals = new ArrayList<T>();
+
+        // Base Case
+        if (root.getLeft() == null && root.getRight() == null) {
+            returnVals.add(root.getData());
+            return returnVals;
+
+        // Recursive Method
+        } else {
+            returnVals.add(root.getData());
+            List<T> leftVals = preorder(root.getLeft());
+            List<T> rightVals = preorder(root.getRight());
+            returnVals.addAll(leftVals);
+            returnVals.addAll(rightVals);
+            return returnVals;
         }
-        System.out.print(root.getData() + " ");
-
-        preorder(root.getLeft());
-
-        preorder(root.getRight());
     }
 
+
     /**
-     * Given the root of a binary search tree, generate an
-     * in-order traversal of the tree. The original tree
-     * should not be modified in any way.
-     *
-     * This must be done recursively.
-     *
-     * Must be O(n).
-     *
-     * @param <T> Generic type.
-     * @param root The root of a BST.
-     */
+     * In Order Traversal
+     * */
     public List<T> inorder(TreeNode<T> root) {
         // L,C,R
+        // Declare a new list
+        List<T> returnVals = new ArrayList<T>();
 
-        if(root == null){
-            return (List<T>) root.getData();
+        // Base Case
+        if (root.getLeft() == null && root.getRight() == null) {
+            returnVals.add(root.getData());
+            return returnVals;
+
+        // Recursive Method
+        } else {
+            returnVals.add(root.getData());
+            List<T> leftVals = inorder(root.getLeft());
+            List<T> rightVals = inorder(root.getRight());
+            returnVals.addAll(leftVals);
+            returnVals.addAll(rightVals);
+            return returnVals;
         }
-        inorder(root.getLeft());
-
-        System.out.print(root.getData() + " ");
-
-        inorder(root.getRight());
     }
 
     /**
-     * Given the root of a binary search tree, generate a
-     * post-order traversal of the tree. The original tree
-     * should not be modified in any way.
-     *
-     * This must be done recursively.
-     *
-     * Must be O(n).
-     *  @param <T> Generic type.
-     * @param root The root of a BST.
+     * Post Order Traversal
      */
-    public void postorder(TreeNode<T> root) {
+    public List<T> postorder(TreeNode<T> root) {
         // L,R,C
+        //Declare a new list
+        List<T> returnVals = new ArrayList<T>();
 
-        if(root == null){
-            return;
+        //Base Case
+        if (root.getLeft() == null && root.getRight() == null) {
+            returnVals.add(root.getData());
+            return returnVals;
+
+        //Recursive Method
+        } else {
+            returnVals.add(root.getData());
+            List<T> leftVals = postorder(root.getLeft());
+            List<T> rightVals = postorder(root.getRight());
+            returnVals.addAll(leftVals);
+            returnVals.addAll(rightVals);
+            return returnVals;
         }
-        postorder(root.getLeft());
-
-        postorder(root.getRight());
-
-        System.out.print(root.getData() + " ");
     }
+
+    //Base Case helper method
 
 }

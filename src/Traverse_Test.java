@@ -1,3 +1,7 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
+
 public class Traverse_Test {
 
     public static void main(String[] args) {
@@ -13,12 +17,14 @@ public class Traverse_Test {
         TreeNode<Integer> left3 = new TreeNode<>(4);
         TreeNode<Integer> left4 = new TreeNode<>(5);
 
-        TreeNode<Integer> left5 = new TreeNode<>(69);
+        TreeNode<Integer> left5 = new TreeNode<>(10);
+        TreeNode<Integer> right5 = new TreeNode<>(11);
 
         // Connect Nodes
         rooty.setLeft(left1);
         rooty.setRight(right1);
 
+        left1.setRight(right5);
         left1.setLeft(left2);
         left2.setLeft(left3);
         left2.setRight(left5);
@@ -27,7 +33,9 @@ public class Traverse_Test {
         right1.setRight(right2);
 
         //Test Pre, In, Post, order Traversal
-        postorder(rooty);
+        Traversals<Integer> mist = new Traversals<>();
+        System.out.println(mist.preorder(rooty));
+
 
     }
 }
