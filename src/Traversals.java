@@ -61,8 +61,10 @@ public class Traversals<T extends Comparable<? super T>> {
         return returnVals;
     }
     private boolean baseCase(TreeNode<T> root){
-        if (root.getLeft() == null && root.getRight() == null)
-            return true;
+        if(root != null){
+            if (root.getLeft() == null && root.getRight() == null)
+                return true;
+        }
         return false;
     }
 }
