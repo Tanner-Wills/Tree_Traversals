@@ -9,6 +9,8 @@ public class Traversals<T extends Comparable<? super T>> {
      * Pre Order Traversal
      */
     public List<T> preorder(TreeNode<T> root) {
+        // C,L,R
+
         List<T> returnVals = new ArrayList<T>();
         if (baseCase(root) == true){
             returnVals.add(root.getData());
@@ -27,6 +29,7 @@ public class Traversals<T extends Comparable<? super T>> {
      * In Order Traversal
      */
     public List<T> inorder(TreeNode<T> root) {
+        // L,C,R
 
         List<T> returnVals = new ArrayList<T>();
         if (baseCase(root) == true){
@@ -46,6 +49,7 @@ public class Traversals<T extends Comparable<? super T>> {
      * Post Order Traversal
      */
     public List<T> postorder(TreeNode<T> root) {
+        // L,R,C
 
         List<T> returnVals = new ArrayList<T>();
         if (baseCase(root) == true){
