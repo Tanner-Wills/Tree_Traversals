@@ -16,8 +16,14 @@ public class Traversals<T extends Comparable<? super T>> {
             returnVals.add(root.getData());
         }
         else {
-            List<T> leftVals = preorder(root.getLeft());
-            List<T> rightVals = preorder(root.getRight());
+            List<T> leftVals = new ArrayList<T>();
+            List<T> rightVals = new ArrayList<T>();
+            if(root.getLeft() != null){
+                leftVals = preorder(root.getLeft());
+            }
+            if(root.getRight() != null){
+                rightVals = preorder(root.getRight());
+            }
             returnVals.add(root.getData());
             returnVals.addAll(leftVals);
             returnVals.addAll(rightVals);
@@ -36,8 +42,14 @@ public class Traversals<T extends Comparable<? super T>> {
             returnVals.add(root.getData());
         }
         else {
-            List<T> leftVals = inorder(root.getLeft());
-            List<T> rightVals = inorder(root.getRight());
+            List<T> leftVals = new ArrayList<T>();
+            List<T> rightVals = new ArrayList<T>();
+            if(root.getLeft() != null){
+                leftVals = preorder(root.getLeft());
+            }
+            if(root.getRight() != null){
+                rightVals = preorder(root.getRight());
+            }
             returnVals.addAll(leftVals);
             returnVals.add(root.getData());
             returnVals.addAll(rightVals);
@@ -56,8 +68,14 @@ public class Traversals<T extends Comparable<? super T>> {
             returnVals.add(root.getData());
         }
         else {
-            List<T> leftVals = postorder(root.getLeft());
-            List<T> rightVals = postorder(root.getRight());
+            List<T> leftVals = new ArrayList<T>();
+            List<T> rightVals = new ArrayList<T>();
+            if(root.getLeft() != null){
+                leftVals = preorder(root.getLeft());
+            }
+            if(root.getRight() != null){
+                rightVals = preorder(root.getRight());
+            }
             returnVals.addAll(leftVals);
             returnVals.addAll(rightVals);
             returnVals.add(root.getData());

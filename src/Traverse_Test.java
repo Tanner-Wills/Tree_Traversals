@@ -7,29 +7,26 @@ public class Traverse_Test {
     public static void main(String[] args) {
 
         // Declare Nodes
-        TreeNode<Integer> rooty = new TreeNode<>(1);
-        TreeNode<Integer> left1 = new TreeNode<>(2);
-        TreeNode<Integer> right1 = new TreeNode<>(6);
+        //Declare Nodes
+        TreeNode<Integer> rooty = new TreeNode<>(50);
 
-        TreeNode<Integer> left2 = new TreeNode<>(3);
-        TreeNode<Integer> right2 = new TreeNode<>(7);
+        TreeNode<Integer> left1 = new TreeNode<>(15);
+        TreeNode<Integer> left2 = new TreeNode<>(5);
+        TreeNode<Integer> left3 = new TreeNode<>(10);
+        TreeNode<Integer> left4 = new TreeNode<>(25);
+        TreeNode<Integer> left5 = new TreeNode<>(20);
 
-        TreeNode<Integer> left3 = new TreeNode<>(4);
-        TreeNode<Integer> left4 = new TreeNode<>(5);
+        TreeNode<Integer> right1 = new TreeNode<>(75);
+        TreeNode<Integer> right2 = new TreeNode<>(100);
+        TreeNode<Integer> right3 = new TreeNode<>(85);
 
-        TreeNode<Integer> left5 = new TreeNode<>(10);
-        TreeNode<Integer> right5 = new TreeNode<>(11);
 
-        // Connect Nodes
+        //Link Nodes
         rooty.setLeft(left1);
-        rooty.setRight(right1);
-
-        left1.setRight(right5);
         left1.setLeft(left2);
-        left2.setLeft(left3);
-        left2.setRight(left5);
+        left2.setRight(left3);
 
-        right1.setLeft(left4);
+        rooty.setRight(right1);
         right1.setRight(right2);
 
         //Test Pre, In, Post, order Traversal
